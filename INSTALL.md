@@ -1,7 +1,6 @@
 ## How To Install
 
 #### Installation steps for common desktop environments that use compositing effects:
-
 Step 1: Create ".themes" and ".icons" directories  in your user directory "/home/$USER/" if they don't already exist.
 (Note: You may have to enable "view hidden folders" in the file manager to see ".themes" and ".icons" after creating them.)
 
@@ -17,6 +16,7 @@ Log out then log back in.
 Finished!
 
 #### Installation steps for non-compositing desktop environments:
+This version of the theme is cross compatible with compositing and non-compositing environments! You can use it to disable GNOME Client Side Decorations while retaining compositing effects if you desire.
 
 Step 1: Create ".themes" and ".icons" directories  in your user directory "/home/$USER/" if they don't already exist.
 (Note: You may have to enable "view hidden folders" in the file manager to see ".themes" and ".icons" after creating them.)
