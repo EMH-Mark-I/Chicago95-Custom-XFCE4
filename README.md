@@ -1,5 +1,5 @@
 # Chicago95-Custom for XUbuntu 17.10
-This is a customized version of the [Chicago95 GTK theme](https://github.com/grassmunk/Chicago95). This is a theme that I've modified for my own purposes and sharing to you. There are two parts of the theme, one for compositing environments and one for non-compositing environments. See the INSTALL.md for additional information.
+This is a customized version of the [Chicago95 GTK theme](https://github.com/grassmunk/Chicago95). This is a theme that I've modified for my own purposes and sharing to you. There are two parts of the theme, one strictly for compositing environments with support for GNOME Client Side Decorations and one with cross compatibility for compositing and non-compositing environments. See the INSTALL.md for additional information.
 
 #### Requirements
 GTK+ 3.22
