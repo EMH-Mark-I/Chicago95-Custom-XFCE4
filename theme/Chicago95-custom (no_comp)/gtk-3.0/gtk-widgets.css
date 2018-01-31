@@ -1205,36 +1205,56 @@ expander arrow,
 arrow.right {
     background-image: url("assets/arrow-right.png");
 }
+
 tabs > arrow.up:hover,
 expander arrow:hover,
 :hover > arrow.right {
     background-image: url("assets/arrow-right-selected.png");
 }
 
+:checked > arrow.right {
+    background-image: url("assets/arrow-right-disabled.png");
+}
+
 tabs > arrow.down,
 arrow.left {
     background-image: url("assets/arrow-left.png");
 }
+
 tabs > arrow.down:hover,
 :hover > arrow.left {
     background-image: url("assets/arrow-left-selected.png");
 }
 
+:checked > arrow.left {
+    background-image: url("assets/arrow-left-disabled.png");
+}
+
 arrow.up {
     background-image: url("assets/arrow-up.png");
 }
+
 :hover > arrow.up {
     background-image: url("assets/arrow-up-selected.png");
+}
+
+:checked > arrow.up {
+    background-image: url("assets/arrow-up-disabled.png");
 }
 
 expander arrow:checked,
 arrow.down {
     background-image: url("assets/arrow-down.png");
 }
+
 expander arrow:checked:hover,
 :hover > arrow.down {
     background-image: url("assets/arrow-down-selected.png");
     
+}
+
+:checked > arrow.down {
+    background-image: url("assets/arrow-down-disabled.png");
 }
 
 menu > arrow.top,
@@ -1249,6 +1269,18 @@ menu > arrow.top,
                 inset -1px -1px 0 0 @bg_shade;
 }
 
+menu > arrow.top:hover,
+.menu > arrow.top:hover,
+.context-menu > arrow.top:hover {
+    background-image: url("assets/arrow-up-selected.png");
+}
+
+menu > arrow.top:checked,
+.menu > arrow.top:checked,
+.context-menu > arrow.top:checked {
+    background-image: url("assets/arrow-up-disabled.png");
+}
+
 menu > arrow.bottom,
 .menu > arrow.bottom,
 .context-menu > arrow.bottom {
@@ -1259,6 +1291,18 @@ menu > arrow.bottom,
     border-color: @bg_shade @bg_dark @bg_dark @bg_color;
     box-shadow: inset 1px 1px 0 0 @bg_bright,
                 inset -1px -1px 0 0 @bg_shade;
+}
+
+menu > arrow.bottom:hover,
+.menu > arrow.bottom:hover,
+.context-menu > arrow.bottom:hover {
+    background-image: url("assets/arrow-down-selected.png");
+}
+
+menu > arrow.bottom:checked,
+.menu > arrow.bottom:checked,
+.context-menu > arrow.bottom:checked {
+    background-image: url("assets/arrow-down-disabled.png");
 }
 
 tabs arrow.down {
