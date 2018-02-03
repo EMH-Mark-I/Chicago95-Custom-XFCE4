@@ -16,7 +16,6 @@
     -GtkWindow-resize-grip-height: 0;
     -GtkWindow-resize-grip-width: 0;
     -WnckTasklist-fade-overlay-rect: 0;
-
     -GtkTreeView-horizontal-separator: 1;
     -GtkTreeView-grid-line-width: 1;
     -GtkTreeView-grid-line-pattern: '';
@@ -24,15 +23,10 @@
     -GtkTreeView-tree-line-pattern: '';
 
     background-clip: padding-box;
-
     outline-width: 1px;
     outline-offset: 0px;
-    outline-color: #808080;
+    outline-color: @selected_inactive_bg_color;
     outline-style: solid;
-
-    /* inherit colors from parent */
-/*    color: inherit;
-    background-color: inherit; */
     min-width: 8px;
     min-height: 8px;
 
@@ -54,7 +48,7 @@ selection {
 
 :disabled,
 :disabled:disabled {
-    color: #808080;
+    color: @selected_inactive_bg_color;
     text-shadow: 1px 1px 0 @border_bright;
     -gtk-icon-effect: dim;
 }
@@ -250,7 +244,7 @@ slider:disabled,
 trough,
 paned > separator {
     background-color: @border_bright;
-    background-image: linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, #c0c0c0), linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, @border_dark);
+    background-image: linear-gradient(45deg, @bg_color 25%, transparent 25%, transparent 75%, @bg_color 75%, @bg_color), linear-gradient(45deg, @bg_color 25%, transparent 25%, transparent 75%, @bg_color 75%, @border_dark);
     background-size: 2px 2px;
     background-position: 0 0, 1px 1px;
 }
@@ -265,9 +259,9 @@ paned > separator {
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     border-radius: 0;
-    box-shadow: inset -1px -1px 0px 0px #808080;
+    box-shadow: inset -1px -1px 0px 0px @selected_inactive_bg_color;
     color: black;
-    background-color: #c0c0c0;
+    background-color: @bg_color;
 
 }
 
@@ -279,7 +273,7 @@ GtkButton {
     border-bottom: 1px solid black;
     border-radius: 0;
     color: black;
-    background-color: #c0c0c0;
+    background-color: @bg_color;
 
 }
 
@@ -297,13 +291,19 @@ GtkButton:not(GtkCheckButton):active {
     border-right: 1px solid white;
     border-bottom: 1px solid white;
     border-radius: 0;
-    box-shadow: inset 1px 1px 0px 0px #808080;
-    background-color: #c0c0c0;
+    box-shadow: inset 1px 1px 0px 0px @selected_inactive_bg_color;
+    background-color: @bg_color;
     background-image: none;
 }
 
 
 popover button.flat {
+    padding: 4px;
+    margin: 2px;
+    background-color: @bg_color;
+}
+
+popover button.flat:active {
     padding: 4px;
     margin: 2px;
     background-color: @bg_color;
@@ -328,7 +328,7 @@ stacksidebar list row {
     padding: 2px;
     background-color: @bg_color;
     border-color: @bg_color @bg_dark @bg_dark @bg_color;
-    box-shadow: inset 1px 1px #ffffff,
+    box-shadow: inset 1px 1px @selected_fg_color,
                 inset -1px -1px @bg_shade;
     border-style: solid;
     border-width: 1px;
@@ -498,7 +498,7 @@ view:selected:focus {
 }
 
 viewport separator {
-    border-top: 1px solid #808080;
+    border-top: 1px solid @selected_inactive_bg_color;
     border-bottom: 1px solid white;
 }
 
@@ -541,7 +541,7 @@ GtkListBox GtkBin:selected GtkLabel {
 
 GtkListBox GtkBin:selected,
 GtkListBox GtkBin:selected GtkImage {
-    background: #000080;
+    background: @selected_bg_color;
     color: white;
     outline: none;
 }
@@ -643,7 +643,7 @@ paned > separator {
 }
 /* quodlibet likes to reset background-image here...
 paned separator {
-background-image: linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, #c0c0c0), linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, @border_dark);
+background-image: linear-gradient(45deg, @bg_color 25%, transparent 25%, transparent 75%, @bg_color 75%, @bg_color), linear-gradient(45deg, @bg_color 25%, transparent 25%, transparent 75%, @bg_color 75%, @border_dark);
 }*/
 
 
@@ -806,7 +806,7 @@ scrollbar slider {
     padding: 0px;
     background-color: @bg_color;
     border-color: @bg_color @bg_dark @bg_dark @bg_color;
-    box-shadow: inset 1px 1px #ffffff,
+    box-shadow: inset 1px 1px @selected_fg_color,
                 inset -1px -1px @bg_shade;
     border-style: solid;
     border-width: 1px;
@@ -825,7 +825,7 @@ scrollbar.junction,
 scrollbar .junction {
     border-width: 1px;
     border-style: solid;
-    border-color: #c0c0c0;
+    border-color: @bg_color;
     background-color: red;
 }
 
@@ -1126,12 +1126,12 @@ infobar {
 
 .menu, menu {
     padding: 0px;
-    border-top: 1px solid #c0c0c0;
-    border-bottom: 1px solid #000000;
-    border-left: 1px solid #c0c0c0;
-    border-right: 1px solid #000000;
-    box-shadow: inset 1px 1px #FFFFFF,
-                inset -1px -1px #808080;
+    border-top: 1px solid @bg_color;
+    border-bottom: 1px solid @text_color;
+    border-left: 1px solid @bg_color;
+    border-right: 1px solid @text_color;
+    box-shadow: inset 1px 1px @selected_fg_color,
+                inset -1px -1px @selected_inactive_bg_color;
     background-color: @menu_bg_color;
     color: @fg_color;
 }
@@ -1250,7 +1250,6 @@ arrow.down {
 expander arrow:checked:hover,
 :hover > arrow.down {
     background-image: url("assets/arrow-down-selected.png");
-    
 }
 
 :checked > arrow.down {
@@ -1342,7 +1341,7 @@ notebook > stack{
 
 notebook stack box frame {
 border: transparent;
-box-shadow: none
+box-shadow: none;
 }
 
 notebook:not(.frame) > stack {
@@ -1420,6 +1419,7 @@ in the future... */
 notebook > header.top {
     margin-left: -1px; 
     margin-right: -1px;
+    border-bottom: 4px solid transparent;
 }
 notebook > header.top > tabs {
     border-style: solid;
@@ -1437,7 +1437,7 @@ notebook > header.top > tabs > tab {
     box-shadow: inset 1px 1px @bg_bright,
                 inset -1px 0px @bg_shade;
 
-    margin-top: 2px;
+    margin-top: 5px;
     margin-bottom: 1px;
     border-top-left-radius: 2px 6px;
     border-top-right-radius: 2px 6px;
@@ -1453,7 +1453,8 @@ notebook > header.top > tabs > tab:checked {
 /* LEFT tabs */
 notebook > header.left {
     margin-top: -1px; 
-    margin-bottom: -1px; 
+    margin-bottom: -1px;
+    border-right: 4px solid transparent;
 }
 notebook > header.left > tabs {
     border-style: solid;
@@ -1472,7 +1473,7 @@ notebook > header.left > tabs > tab {
     box-shadow: inset 1px 1px @bg_bright,
                 inset 0px -1px @bg_shade;
 
-    margin-left: 2px;
+    margin-left: 5px;
     margin-right: 1px;
     border-top-left-radius: 6px 2px;
     border-bottom-left-radius: 6px 2px;
@@ -1495,6 +1496,7 @@ notebook > header.bottom {
     margin-left: 0px; 
     margin-right: -3px; 
     margin-bottom: -2px;
+    border-top: 4px solid transparent;
 }
 notebook > header.bottom > tabs {
     border-style: solid;
@@ -1512,8 +1514,8 @@ notebook > header.bottom > tabs > tab {
     box-shadow: inset 1px 0px @bg_bright,
                 inset -1px -1px @bg_shade;
 
-    margin-top: 0px;
-    margin-bottom: 1px;
+    margin-top: 1px;
+    margin-bottom: 5px;
     border-bottom-left-radius: 2px 6px;
     border-bottom-right-radius: 2px 6px;
 
@@ -1532,6 +1534,7 @@ notebook > header.right {
     margin-top: 0px; 
     margin-bottom: -3px; 
     margin-right: -2px;
+    border-left: 4px solid transparent;
 }
 notebook > header.right > tabs {
     border-style: solid;
@@ -1550,8 +1553,8 @@ notebook > header.right > tabs > tab {
     box-shadow: inset 0px 1px @bg_bright,
                 inset -1px -1px @bg_shade;
 
-    margin-left: 0px;
-    margin-right: 1px;
+    margin-left: 1px;
+    margin-right: 5px;
     border-top-right-radius: 6px 2px;
     border-bottom-right-radius: 6px 2px;
 
@@ -1771,8 +1774,8 @@ placessidebar list > row,
 .sidebar.view,
 .sidebar .view,
 .sidebar GtkScrolledWindow {
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: @selected_fg_color;
+    color: @text_color;
     box-shadow: none;
 }
 
@@ -1998,7 +2001,7 @@ overshoot, undershoot {
  
 box label link {
     color: white;
-    text-shadow: 1px 1px #808080;
+    text-shadow: 1px 1px @selected_inactive_bg_color;
 }
 
 
@@ -2248,7 +2251,6 @@ headerbar button:not(.titlebutton) > image {
     padding-right: 3px;
     margin-top: -3px;
     margin-bottom: -3px;
-
 }
 
 headerbar button:active:not(.titlebutton) > image {
@@ -2327,7 +2329,7 @@ button.titlebutton:checked:not(.appmenu) {
     background-repeat: no-repeat;
 }
 
-/* helps get hid of ugly fat buttons */
+/* helps hide ugly fat buttons */
 .titlebutton image:not(.appmenu) {
     padding: 0px;
     margin-top: -1px;
@@ -2341,7 +2343,6 @@ button.titlebutton:checked:not(.appmenu) {
 .titlebutton.maximize,
 .titlebutton.minimize {
     color: transparent;
-
 }
 
 .titlebutton.minimize {
