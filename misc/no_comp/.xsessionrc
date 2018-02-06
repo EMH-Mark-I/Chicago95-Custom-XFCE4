@@ -1,3 +1,4 @@
+#Disable Client Side Decorations
   if [ -n "$STARTUP" ]; then
     BASESTARTUP=${STARTUP%% *}
     BASESTARTUP=${BASESTARTUP##*/}
@@ -11,3 +12,5 @@
     fi
   fi
 
+#Disable overlay scrollbars
+export GTK_OVERLAY_SCROLLING=0
