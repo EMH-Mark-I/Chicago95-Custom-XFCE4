@@ -2445,6 +2445,8 @@ grid viewport box scrolledwindow viewport {
     background-color: white;
 }
 
+/* printdialog */
+
 printdialog notebook > stack > box {
     padding: 10px;
 }
