@@ -1,36 +1,26 @@
 ## How To Install
 
 #### Installation steps for common desktop environments that use compositing effects:
-Step 1: Create ".themes" and ".icons" directories  in your user directory "/home/$USER/" if they don't already exist.
-(Note: You may have to enable "view hidden folders" in the file manager to see ".themes" and ".icons" after creating them.)
+Note: You may have to enable `view hidden folders` in the file manager to see `.themes/` and `.icons/` after creating them.
 
-Step 2: Copy the "Chicago95-custom" directory into ".themes".
-
-Step 3: Copy the "Chicago95-icons-tux" directory into ".icons".
-
-Step 4: Copy the "gtk.css" file from the "misc" directory into "/home/$USER/.config/gtk-3.0/".
-(Note: You may have to create the "gtk-3.0" directory if it's not there.)
-
-Log out then log back in.
-
-Finished!
+- Create `.themes/` and `.icons/` directories  in your user home directory `/home/$USER/` (with $USER being your username) if they don't already exist.
+- Copy the `Chicago95-custom` directory into `.themes`.
+- Copy the `Chicago95-icons-tux` directory into `.icons`.
+- Copy the `gtk.css` file from the `misc` directory into `/home/$USER/.config/gtk-3.0/`. You may have to create the `gtk-3.0` directory if it's not there.
+- Log out then log back in.
+- Finished!
 
 #### Installation steps for non-compositing desktop environments:
-This version of the theme is cross compatible with compositing and non-compositing environments! You can use it to disable GNOME Client Side Decorations while retaining compositing effects if you desire.
+This version of the theme is cross compatible with compositing and non-compositing environments!
 
-Step 1: Create ".themes" and ".icons" directories  in your user directory "/home/$USER/" if they don't already exist.
-(Note: You may have to enable "view hidden folders" in the file manager to see ".themes" and ".icons" after creating them.)
+Note: You may have to enable `view hidden folders` in the file manager to see `.themes/` and `.icons/` after creating them.
 
-Step 2: Copy the "Chicago95-custom (no_comp)" directory into ".themes".
-
-Step 3: Copy the "Chicago95-icons-tux" directory into ".icons".
-
-Step 4: Copy the "gtk.css" file from the "misc/no_comp" directory into "/home/$USER/.config/gtk-3.0/".
-(Note: You may have to create the "gtk-3.0" directory if it's not there.)
-
-Step 5: Copy the ".xsessionrc" file from the "misc/no_comp" directory into your user directory "/home/$USER/".
-
-Step 6: Install gtk3-nocsd. Note: gtk3-nocsd is available in the main Ubuntu repository, but is out of date and won't function for some GTK3 applications, so we'll install it from source as seen from the following steps:
+- Create `.themes/` and `.icons/` directories  in your user directory `/home/$USER/` if they don't already exist.
+- Copy the `Chicago95-custom (no_comp)` directory into `.themes`.
+- Copy the `Chicago95-icons-tux` directory into `.icons`.
+- Copy the `gtk.css` file from the `misc/no_comp` directory into `/home/$USER/.config/gtk-3.0/`. You may have to create the `gtk-3.0` directory if it's not there.
+- Copy the `.xsessionrc` file from the `misc/no_comp` directory into your user directory `/home/$USER/`.
+- Install gtk3-nocsd. Note: gtk3-nocsd is available in the main Ubuntu repository, but is out of date and won't function for some GTK3 applications, so we'll install it from source as seen from the following steps:
 
 Download the repo and extract it:
 
@@ -51,79 +41,123 @@ Move the newly compiled executable file and library.
     sudo cp libgtk3-nocsd.so.0 /usr/lib/x86_64-linux-gnu/
     sudo cp gtk3-nocsd /usr/bin/
 
-Log out then log back in.
+- Log out then log back in.
+- Finished!
 
-Finished!
-
-Note: The ".xsessionrc" file is required for running gtk3-nocsd upon login. If you didn't copy the file into the "/home/$USER/" directory, GTK3+ applications won't display menu borders and header bars will appear distorted.
+Note: The `.xsessionrc` file is required for running gtk3-nocsd upon login. If you didn't copy the file into the `/home/$USER/` directory, GTK3+ applications won't display menu borders and header bars will appear distorted.
 
 ## Configuration
-Enable the notification balloon theme. Open the system notification settings manager (xfce4-notifyd-config) and in the "Theme" option select Chicago95-custom in the pull down menu.
 
-Enable the shell theme. Open the system appearance settings manager (xfce4-appearance-settings) and in the "Style" tab select "Chicago95-custom."
+#### Enabling the GTK theme
+Open the XFCE settings manager > Appearance.
 
-Enable the window manager theme. Open the XFCE Window Manager settings (xfwm4-settings) and in the "Style" tab select "Chicago95-custom."
+- Choose Chicago95 as the theme style.
 
-#### • Font Settings:
-In the XFCE Appearance Manager, select the "Fonts" tab and apply the following information.
+#### Enabling the Window Manager theme
+Open the XFCE settings manager > Window Manager.
 
-    Default Font: Sans 10
+- Choose Chicago95.
+- Set Title font to Sans Bold, 8 points.
 
-    Enable Antialiasing: Yes
+#### Enabling the theme for QT5 applications (optional)
+Open your terminal and install the qt5 style plugins package.
 
-    Hinting: Full
+- sudo apt install qt5-style-plugins
 
-    Sub-pixel order: None
+Relogin for changes to take place.
 
-In the XFCE Window Manager
+#### Enabling the notification theme
+Open the XFCE settings manager > Notifications.
 
-    Title bar font: Sans Bold 8pt
+- Choose Chicago95 for the theme.
+- Adjust Opacity to 100%.
 
-#### • Compositor Settings:
-In the XFCE "Window Manager Tweaks" manager, select the "Compositor" tab. Uncheck "Show shadows under dock windows." This will prevent applications from casting a shadow onto the task bar.
+#### Setting up the XFCE panel
+Open the XFCE settings manager > Panel
 
-Note: If you disable the compositor at anytime, GTK3 application menu borders will cease to render. Look at the install steps for setting up this theme for non-compositing environments.
+- Measurments: Even numbers are preffered for the Row Size slider. The smallest optimal panel row size for this theme is 26 pixels. If your panel is below that size, you will encounter icon scaling issues.
+- Under the Appearance tab set the background style to "None (use system style.)"
 
-#### • Panel Setup:
-Create a new panel if necessary. Horizontal, 32px high ONLY, and 100% Length. In the “Appearance” tab set the background style to "None" so that it inherits the theme style. (Only horizontal taskbar. No vertical taskbar, sorry. I'll try adjusting the theme for vertical bars as an option eventually.)
+Here's a list for the panel Items plugin layout as seen from the screen-shots. This is optional, the item configuration is up to you after all.
 
-In the “Items” tab, add the following in this order:
-
-    1. Application Menu OR Whisker Menu; 
-
-    2. Separator (Handle Style); 
-
-    3. Custom Launcher, Custom Launcher, Custom Launcher, etc.
-
-    4. “Show Desktop” plugin; 
-
-    5. Separator (Handle Style); 
-
-    6. Window Buttons (Sorting Order: Time-stamp and Window Grouping is Always. Uncheck “Show Handle” if it’s enabled.); 
-
-    7. Separator (Transparent with Expanding); 
-
-    8. Separator (Handle Style); 
-
-    9. Notification Area (19px max icon size); 
-
-    10. PulseAudio Plugin (Uncheck mark in the plugin settings, "Show Notifications when volume changes." it will conflict with XFCE notifiyd by making duplicate volume notifications); 
-
-    11. Separator (Transparent); 
-
-    12. Orage Panel Clock. ( In the plugin settings, enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.) Note: If you want to display the date in the clock, append “%D” in “Line 1.” If you want a better looking date, you could replace that by appending “%b %m %Y” instead.
-
-#### • Whisker Menu / Application Menu start button:
-Open the properties menu of either Whisker Menu or Application Menu by right clicking on their panel icons and selecting “properties.” Click the icon button in the properties window. 
-
-The custom Start Button icons are located in the following directory (depending on where you installed the overall theme): /home/$USER/.themes/Chicago95-custom/misc/GTK3 start buttons/. Select the file “start-button_windows” or “start-button_tux.”
-
-If the icon appears crunched or blurry, then log out and log back in. The icon should appear a regular size.
+1. Application Menu or Whisker Menu;
+2. Separator (Handle Style);
+3. Custom Launcher, Custom Launcher, Custom Launcher, etc;
+4. “Show Desktop” plugin;
+5. Separator (Handle Style);
+6. Window Buttons (Uncheck "Show flat buttons" and "Show Handle.;" Sorting Order: None; Window grouping: Never);
+7. Separator (Transparent with Expanding);
+8. Separator (Handle Style);
+9. Indicator Plugin OR Notification Area (19px max icon size preferred);
+10. Separator (Transparent);
+11. Orage Panel Clock. (Enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.)
 
 #### • Libre Office 5 GTK3 workaround:
 IF you are seeing issues with Libre Office 5 incorrectly rendering menu items, borders, and boxes. As a workaround you can remove the libreoffice-gtk3 package. This will cause Libre Office to fallback into GTK2, which is functioning properly.
 
     sudo apt remove libreoffice-gtk3
+
+## Optional configurations
+The following configurations are optional and not required but can be used to enhance the theme.
+
+#### Whisker Menu and XFCE Application Menu Start Buttons
+
+#### • Whisker Menu
+Some distributions will use different versions of the XFCE Whisker menu plugin. For example, Debian stable may use the GTK2 version of Whisker menu while XUbuntu 17.10 will use the GTK3 version of the plugin.
+
+Open the XFCE settings manager > Panel > Items tab > Double click the Whisker menu item in the item list.
+
+- In the whisker properties menu click the icon option.
+- In the icon select window navigate to `/home/$USER/.themes/Chicago95/misc` (with $USER being your username.)
+
+`misc/` contains simple small icons if you want a basic icon. These might be ideal for vertical deskbar panels.
+
+`GTK2 start buttons/` contains start button icons.
+
+`GTK3 start buttons/` contains start button icons if you are using the GTK3 version of the plugin.
+
+If your Whisker Menu plugin is GTK2, you'll have to choose an icon associated with your panel size. For example, tux_32px.png would be ideal on a panel with a row size of 32 pixels.
+
+Note: The smallest optimal panel row size for this theme is 26 pixels. If your panel is below that size, you will encounter icon scaling issues.
+
+#### • Application Menu
+Open the XFCE settings manager > Panel > Items tab > Double click the Applications Menu item in the item list.
+
+- In the Applications properties menu click the icon option.
+- In the icon select window navigate to `/home/$USER/.themes/Chicago95/misc` (with $USER being your username.)
+
+`misc/` contains simple small icons if you want a basic icon. These might be ideal for vertical deskbar panels.
+
+`GTK2 start buttons/` contains start button icons.
+
+Since the Application Menu plugin is GTK2, you'll have to choose an icon associated with your panel size. For example, tux_32px.png would be ideal on a panel with a row size of 32 pixels.
+
+Note: The smallest optimal panel row size for this theme is 26 pixels. If your panel is below that size, you will encounter icon scaling issues.
+
+#### Launcher Button scaling (advanced)
+If you want to force 16x16px icons in the launcher buttons, you can do this by making your own custom icons or through the theme by editing the panel.rc file.
+
+- Open a text editor and navigate to `/home/$USER/.themes/Chicago95/gtk-2.0/panel.rc` (with $USER being your username.)
+- Move to line 268 of the file where you will see a section specified for Launcher buttons.
+
+Example steps: You will first need to determine the panel bar row size since the launcher button icon padding is determined by the size of the panel bar.
+
+- Open the XFCE settings manager > Panel
+- Verify the "Row Size (pixels)". (Lets say that it's 38 pixels for this example.)
+- Return back to the text editor and locate the line comment that is specifying your panel bar row size. (38px height panel for this example is on line 302.)
+- Delete the "#" pound character in front of the xthickness and the ythickness values for the specified panel bar size.
+- Now Insert a "#" pound character in front of the xthickness and the ythickness values of the previous default selection, which is for a 26px height panel.
+- Save the file and reload the xfce panel bar. You can run `xfce4-panel -r` in a terminal to reload the panel.
+
+Note: If you use a vertical deskbar, you could add a second row from the panel properties menu to organize the launcher buttons into rows.
+
+#### Shadows
+Disable shadows in compositing for an authentic appearance, or at the very least disable “show shadows under dock windows” to prevent dark shading from the panel bar overlapping onto maximized applications.
+
+- Open the XFCE settings manager > Window Manager Tweaks > Compositor tab
+- Uncheck "Show shadows under pupup windows."
+- Uncheck "Show shadows under dock windows."
+- Uncheck "Show shadows under regular windows."
 
 ## Extra Stuff:
 If you want to install the mouse cursor theme, lightdm theme, Plymouth theme, these are available at [https://github.com/grassmunk/Chicago95](https://github.com/grassmunk/Chicago95). Follow the guides there if you want these!

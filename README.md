@@ -8,6 +8,9 @@ Xfce 4.12
 
 (Preferred distro is Xubuntu 17.10)
 
+## Install the system theme
+[Click here](INSTALL.md) for install steps.
+
 #### Screenshots
 ![](images/Desktop.png "Desktop")
 
@@ -25,7 +28,7 @@ Xfce 4.12
 
 ![](images/panel_buttons.png "Panel Buttons")
 
-#### Credits
+## Credits
 Grassmunk 4/2016
 
 AdrianoML 12/2016
