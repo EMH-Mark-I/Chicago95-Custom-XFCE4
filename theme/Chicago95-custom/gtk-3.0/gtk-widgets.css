@@ -402,27 +402,33 @@ radio {
 check:checked {
     -gtk-icon-source: url("assets/checkbox-checked.png");
     -gtk-icon-transform: none;
+    background: none;
 }
 
 check:not(:checked) {
     -gtk-icon-source: url("assets/checkbox-unchecked.png");
     -gtk-icon-transform: none;
+    background: none;
 }
 
 check:indeterminate {
     -gtk-icon-source: url("assets/checkbox-mixed.png");
+    background: none;
 }
 
 check:disabled:checked {
     -gtk-icon-source: url("assets/checkbox-checked-insensitive.png");
+    background: none;
 }
 
 check:disabled:not(checked) {
     -gtk-icon-source: url("assets/checkbox-unchecked-insensitive.png");
+    background: none;
 }
 
 check:indeterminate:disabled {
     -gtk-icon-source: url("assets/checkbox-mixed-insensitive.png");
+    background: none;
 }
 
 
@@ -2233,38 +2239,38 @@ window > menu {
  * looking headerbar with big elements */
 .titlebar button:not(.titlebutton) {
     padding-top: 0px;
-	padding-bottom: 0px;
-	padding-left: 1px;
-	padding-right: 1px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-	min-height: 0px;
-	min-width: 0px;
+    padding-bottom: 0px;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    min-height: 0px;
+    min-width: 0px;
 }
 
 
 headerbar button:not(.titlebutton) > image {
-	border: solid 1px;
-	border-color: transparent;
-	padding-left: 3px;
-	padding-right: 3px;
-	margin-top: -3px;
-	margin-bottom: -3px;
+    border: solid 1px;
+    border-color: transparent;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-top: -3px;
+    margin-bottom: -3px;
 }
 
 headerbar button:active:not(.titlebutton) > image {
-	border: solid;
-	border-color: transparent;
-	border-left-width: 2px;
-	border-right-width: 0px;
-	border-top-width: 2px;
-	border-bottom-width: 0px;
+    border: solid;
+    border-color: transparent;
+    border-left-width: 2px;
+    border-right-width: 0px;
+    border-top-width: 2px;
+    border-bottom-width: 0px;
 }
 
 headerbar separator {
-	margin-right: 3px;
-	border-left-width: 1px;
-	border-style: solid;
+    margin-right: 3px;
+    border-left-width: 1px;
+    border-style: solid;
 }
 
 headerbar scale {
