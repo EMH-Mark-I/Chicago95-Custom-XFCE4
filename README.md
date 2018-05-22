@@ -6,7 +6,7 @@ GTK+ 3.22
 
 Xfce 4.12
 
-(Preferred distro is Xubuntu 17.10)
+(Preferred distro is Xubuntu 17.10 or 18.04)
 
 ## Install the system theme
 [Click here](INSTALL.md) for install steps.
